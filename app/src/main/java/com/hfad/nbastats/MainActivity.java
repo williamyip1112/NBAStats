@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity
                 .build();
 
         PredictionService service = retrofit.create(PredictionService.class);
-        final Call<AllStarResponse> allStarResponseCall = service.searchByPlayers("LeBron James");
+        final Call<AllStarResponse> allStarResponseCall = service.searchByPlayers("LeBron James", "Kevin Durante",
+                "Steph Curry", "James Harden", "Paul George", "Kyrie Irving", "Giannis Antetokounmpo",
+                "Kawhi Leonard", "Joel Embiid", "Kemba Walker");
         allStarResponseCall.enqueue(new Callback<AllStarResponse>() {
             @Override
             public void onResponse(Call<AllStarResponse> call, Response<AllStarResponse> response)
